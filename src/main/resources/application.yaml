@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      generate-ddl: true
+      ddl-auto: create-drop
+      show-sql: true
+      format_sql: true
+  h2:
+    #http://localhost:8080/h2-console
+    console.enabled: true
+    #    In the snippets above, we set the console path to be /h2-console, which is relative to the address and port of our running application. Therefore, if our app is running at http://localhost:9001, the console will be available at http://localhost:9001/h2-console.
+    path: /h2-console
+    settings.trace: false
+    settings.web-allow-others: false
+
+executor:
+  thread-numbers: 5
